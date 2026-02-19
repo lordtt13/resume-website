@@ -1,0 +1,45 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: wasm32-unknown-unknown
+          override: true
+
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+      - name: Build WASM
+        run: |
+          cd resume-wasm
+          wasm-pack build --target web
+          cd ..
+
+      - name: Prepare Distribution
+        run: |
+          mkdir dist
+          cp index.html dist/
+          cp -r resume-wasm/pkg dist/pkg
+          # Patch path for GitHub Pages (which might be in a subdir)
+          # We need to ensure the path is relative
+          sed -i 's|./resume-wasm/pkg/resume_wasm.js|./pkg/resume_wasm.js|g' dist/index.html
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist

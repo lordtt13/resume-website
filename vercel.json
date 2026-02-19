@@ -1,5 +1,0 @@
-{
-  "buildCommand": "chmod +x deploy.sh && ./deploy.sh",
-  "outputDirectory": "dist",
-  "framework": null
-}
