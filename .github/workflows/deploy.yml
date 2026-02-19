@@ -36,10 +36,14 @@ jobs:
           cp index.html dist/
           # Copy pkg directory to dist/pkg explicitly
           mkdir dist/pkg
-          cp -r resume-wasm/pkg/* dist/pkg/
+          cp -r resume-wasm/pkg/. dist/pkg/
           # Patch path for GitHub Pages (which might be in a subdir)
           # We need to ensure the path is relative and pointing to the created pkg folder
           sed -i 's|\./resume-wasm/pkg/resume_wasm.js|./pkg/resume_wasm.js|g' dist/index.html
+          
+          # Debug: List files
+          echo "Listing dist structure:"
+          ls -R dist
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
