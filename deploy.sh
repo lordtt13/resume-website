@@ -6,6 +6,17 @@ if ! command -v wasm-pack &> /dev/null; then
     curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 fi
 
+# 0.5 Ensure wasm32-unknown-unknown target is installed
+if command -v rustup &> /dev/null; then
+    echo "Adding wasm32-unknown-unknown target via rustup..."
+    rustup target add wasm32-unknown-unknown
+else
+    echo "Rustup not found. Installing rustup..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    source $HOME/.cargo/env
+    rustup target add wasm32-unknown-unknown
+fi
+
 # 1. build the wasm
 cd resume-wasm
 wasm-pack build --target web
