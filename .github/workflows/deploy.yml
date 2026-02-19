@@ -34,7 +34,9 @@ jobs:
         run: |
           mkdir dist
           cp index.html dist/
-          cp -r resume-wasm/pkg dist/pkg
+          # Copy pkg directory to dist/pkg explicitly
+          mkdir dist/pkg
+          cp -r resume-wasm/pkg/* dist/pkg/
           # Patch path for GitHub Pages (which might be in a subdir)
           # We need to ensure the path is relative and pointing to the created pkg folder
           sed -i 's|\./resume-wasm/pkg/resume_wasm.js|./pkg/resume_wasm.js|g' dist/index.html
