@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanmay Thakur | Backend & Infrastructure Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        gray: {
+                            850: '#1f2937',
+                            900: '#111111', // Darker background
+                            950: '#0a0a0a',
+                        },
+                        accent: {
+                            DEFAULT: '#3b82f6', // Subtle blue
+                            dim: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e5e5e5;
+        }
+        .mono-text {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navigation (Minimal) -->
+    <nav class="fixed top-0 w-full z-50 bg-opacity-90 bg-[#050505] backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="font-bold text-lg tracking-tight mono-text">~/tanmay-thakur</span>
+            <div class="flex gap-6 text-sm font-medium text-gray-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#expertise" class="hover:text-white transition-colors">Stack</a>
+                <a href="#experience" class="hover:text-white transition-colors">Work</a>
+                <a href="#labs" class="hover:text-white transition-colors">Labs</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 pt-32 pb-20">
+
+        <!-- 1️⃣ Hero Section -->
+        <section class="section-fade mb-24">
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-4 text-white">
+                Tanmay Thakur
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-gray-400 font-medium mb-8 mono-text">
+                Backend & Infrastructure Engineer
+            </h2>
+            <p class="text-xl text-gray-300 max-w-2xl leading-relaxed mb-10">
+                I design <span class="text-white font-semibold">scalable backend systems</span>, 
+                deploy <span class="text-white font-semibold">cloud-native services</span>, 
+                and build <span class="text-white font-semibold">production-ready DevOps pipelines</span>.
+            </p>
+            
+            <div class="flex flex-wrap gap-4">
+                <button id="download-resume" class="px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition-colors">
+                    View Resume (PDF)
+                </button>
+                <a href="https://github.com/lordtt13" target="_blank" class="px-6 py-3 bg-gray-800 text-white font-medium rounded border border-gray-700 hover:border-gray-500 transition-colors flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/tanmay-thakur-6bb5a9154/" target="_blank" class="px-6 py-3 bg-gray-800 text-white font-medium rounded border border-gray-700 hover:border-gray-500 transition-colors flex items-center gap-2">
+                    LinkedIn
+                </a>
+                <a href="mailto:tanmaythakur.dev@gmail.com" class="px-6 py-3 text-gray-300 font-medium hover:text-white transition-colors">
+                    Contact
+                </a>
+            </div>
+        </section>
+
+        <div class="border-t border-gray-800 my-16"></div>
+
+        <!-- 2️⃣ About Section -->
+        <section id="about" class="mb-24 scroll-mt-24">
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-6 mono-text">01. About</h3>
+            <p class="text-lg text-gray-300 leading-relaxed max-w-3xl">
+                Senior engineer focused on building <span class="text-white">scalable backend services</span>, 
+                <span class="text-white">production-grade DevOps and ETL pipelines</span>, and modern MLOps systems. 
+                Experienced in microservices, AWS infrastructure, and distributed systems design.
+            </p>
+        </section>
+
+        <!-- 3️⃣ Core Expertise Section -->
+        <section id="expertise" class="mb-24 scroll-mt-24">
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-8 mono-text">02. Core Expertise</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Backend -->
+                <div class="p-6 border border-gray-800 rounded bg-gray-900/30 hover:border-gray-700 transition-colors">
+                    <h4 class="font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
+                        Backend Engineering
+                    </h4>
+                    <ul class="space-y-2 text-sm text-gray-400 mono-text">
+                        <li>Microservices structure</li>
+                        <li>REST APIs</li>
+                        <li>Spring Boot</li>
+                        <li>Django</li>
+                        <li>Go services</li>
+                        <li>Ruby on Rails</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="p-6 border border-gray-800 rounded bg-gray-900/30 hover:border-gray-700 transition-colors">
+                    <h4 class="font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                        Cloud & DevOps
+                    </h4>
+                    <ul class="space-y-2 text-sm text-gray-400 mono-text">
+                        <li>AWS (Lambda, ECS, Glue, etc)</li>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>Terraform</li>
+                        <li>CI/CD automation</li>
+                    </ul>
+                </div>
+
+                <!-- MLOps & Data -->
+                <div class="p-6 border border-gray-800 rounded bg-gray-900/30 hover:border-gray-700 transition-colors">
+                    <h4 class="font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                        MLOps & Data Systems
+                    </h4>
+                    <ul class="space-y-2 text-sm text-gray-400 mono-text">
+                        <li>ETL pipelines</li>
+                        <li>Webhooks</li>
+                        <li>OpenAI prototype integrations</li>
+                        <li>Deployment Automations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4️⃣ Experience Section -->
+        <section id="experience" class="mb-24 scroll-mt-24">
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-8 mono-text">03. Experience</h3>
+            
+            <div class="space-y-12 border-l border-gray-800 ml-3 pl-8 relative">
+                
+                <!-- Role 1 -->
+                <div class="relative">
+                    <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-[#050505] bg-gray-600"></span>
+                    <h4 class="text-xl font-bold text-white">Software Engineer</h4>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-accent font-medium">Sustainable Lab Inc.</span>
+                        <span class="text-gray-500 text-sm mono-text">Tokyo | Nov 2024 — Present</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-gray-400 space-y-2 leading-relaxed">
+                        <li>Developing <a href="https://en.suslab.net/" class="text-accent hover:underline" target="_blank">TERRAST</a>, a non-financial data bank platform analyzing ESG/SDGs contributions.</li>
+                        <li>Designing and implementing scalable backend services.</li>
+                    </ul>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="relative">
+                    <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-[#050505] bg-gray-700"></span>
+                    <h4 class="text-xl font-bold text-white">Software Engineer</h4>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-accent font-medium">Goalist India Pvt. Ltd.</span>
+                        <span class="text-gray-500 text-sm mono-text">Bengaluru | Feb 2022 — Oct 2024</span>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 text-gray-400 space-y-2 leading-relaxed">
+                        <li>Built <a href="https://movie-work.jp/" class="text-accent hover:underline" target="_blank">movie-work.jp</a> job platform using Java & Spring Boot.</li>
+                        <li>Developed multiple internal tools leveraging OpenAI APIs.</li>
+                        <li>Engineered Django backend and deployment for <a href="https://b-align.dental" class="text-accent hover:underline" target="_blank">b-align.dental</a>.</li>
+                        <li>Modernized booking system infrastructure for <a href="https://crie.co.jp/" class="text-accent hover:underline" target="_blank">CRIE</a> renewal.</li>
+                        <li>Maintained microservices architecture for <a href="https://www.powerwork-pro.jp/" class="text-accent hover:underline" target="_blank">PowerWork Pro</a> (Ruby on Rails).</li>
+                        <li>Deployed <a href="https://in.vision-logistics.net/" class="text-accent hover:underline" target="_blank">invoice management system</a> on AWS/K8s using NestJS & React.</li>
+                        <li>Built Scrapy crawlers, webhook-triggered ETL pipelines, and external data APIs.</li>
+                        <li>Developed TDD-based Go microservice for <a href="https://portershrbc.com/process-management/" class="text-accent hover:underline" target="_blank">HRBC reminders</a>.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="mb-24 scroll-mt-24">
+             <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-8 mono-text">04. Education</h3>
+             <div class="p-6 border border-gray-800 rounded bg-gray-900/30 hover:border-gray-700 transition-colors">
+                 <div class="flex justify-between items-start mb-2">
+                     <h4 class="text-xl font-bold text-white">
+                        <a href="https://vit.ac.in/" target="_blank" class="hover:text-accent transition-colors">Vellore Institute of Technology</a>
+                     </h4>
+                     <span class="text-gray-500 text-sm mono-text">2017 — 2021</span>
+                 </div>
+                 <p class="text-gray-400">Bachelor of Technology - Electrical and Electronics Engineering</p>
+             </div>
+        </section>
+
+        <!-- 5️⃣ Projects / Labs Section -->
+        <section id="labs" class="mb-24 scroll-mt-24">
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-8 mono-text">04. Engineering Lab</h3>
+            <p class="text-gray-400 mb-8">System-level tooling experiments and infrastructure demos.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Voice Synthesis -->
+                <a href="https://github.com/smoke-trees/Voice-synthesis" target="_blank" class="group block p-6 bg-gray-900 border border-gray-800 rounded hover:border-accent transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="font-bold text-white group-hover:text-accent transition-colors">Voice Synthesis</h4>
+                        <span class="text-xs font-mono text-gray-500 border border-gray-700 rounded px-2 py-1">Python/DL</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">Text-to-speech synthesis project exploring deep learning models for voice generation.</p>
+                </a>
+
+                <!-- Node TS GraphQL Template -->
+                <a href="https://github.com/smoke-trees/node-ts-graphql-pg-template" target="_blank" class="group block p-6 bg-gray-900 border border-gray-800 rounded hover:border-accent transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="font-bold text-white group-hover:text-accent transition-colors">Node TS GraphQL Template</h4>
+                        <span class="text-xs font-mono text-gray-500 border border-gray-700 rounded px-2 py-1">TypeScript/GraphQL</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">Production-ready template for Node.js, TypeScript, GraphQL, and PostgreSQL.</p>
+                </a>
+
+                <!-- CloudFormation Generator -->
+                <a href="https://github.com/lordtt13/cloudformation-template-generator" target="_blank" class="group block p-6 bg-gray-900 border border-gray-800 rounded hover:border-accent transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="font-bold text-white group-hover:text-accent transition-colors">CloudFormation Generator</h4>
+                        <span class="text-xs font-mono text-gray-500 border border-gray-700 rounded px-2 py-1">Go/IaC</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">Tool to automate the generation of AWS CloudFormation templates.</p>
+                </a>
+
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-600 text-sm pb-10 mono-text">
+            &copy; 2026 Tanmay Thakur. Built with intent.
+        </footer>
+    </main>
+
+    <script type="module">
+        import init, { generate_resume_pdf } from './resume-wasm/pkg/resume_wasm.js';
+
+        async function run() {
+            await init();
+
+            document.getElementById('download-resume').addEventListener('click', () => {
+                try {
+                    const pdfData = generate_resume_pdf();
+                    const blob = new Blob([pdfData], { type: 'application/pdf' });
+                    const url = URL.createObjectURL(blob);
+                    
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'Tanmay_Thakur_Resume.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                } catch (error) {
+                    console.error("Failed to generate PDF via WASM:", error);
+                    alert("Error generating PDF. Check console properly.");
+                }
+            });
+        }
+
+        run();
+    </script>
+</body>
+</html>

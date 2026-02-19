@@ -1,0 +1,19 @@
+# Mac
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Rust / WASM
+resume-wasm/target/
+# We keep 'pkg' committed so the site works without rebuilding on deployment, 
+# unless you set up a CI pipeline.
+# resume-wasm/pkg/ 
+**/*.rs.bk
+
+# Node (if added later)
+node_modules/
+npm-debug.log
+
+serve.py
